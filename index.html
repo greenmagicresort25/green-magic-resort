@@ -7,6 +7,7 @@
   <title>Green Magic Resort | Wayanad</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     .swiper-container {
       width: 100%;
@@ -25,6 +26,12 @@
       color: white;
       z-index: 20;
     }
+    .resort-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
@@ -32,7 +39,7 @@
   <!-- Header on top of carousel -->
   <div class="overlay-header py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <h1 class="text-2xl font-bold">Green Magic Resort</h1>
+      <h1 class="resort-heading">Green Magic Resort</h1>
       <nav class="space-x-4 text-sm md:text-base">
         <a href="index.html" class="hover:underline">Home</a>
         <a href="about.html" class="hover:underline">About</a>
