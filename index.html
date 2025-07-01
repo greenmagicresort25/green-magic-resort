@@ -1,4 +1,4 @@
-<!-- Green Magic Resort - Updated Home Page with Carousel (local image hosting) -->
+<!-- Green Magic Resort - Updated Home Page with Carousel (logo on top of image) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +10,27 @@
   <style>
     .swiper-container {
       width: 100%;
-      height: 90vh;
+      height: 100vh;
     }
     .swiper-slide {
       background-size: cover;
       background-position: center;
+      position: relative;
+    }
+    .overlay-header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0,0,0,0.4);
+      color: white;
+      z-index: 20;
     }
   </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
-  <header class="bg-green-900 text-white py-4 shadow-md">
+
+  <!-- Header on top of carousel -->
+  <div class="overlay-header py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
       <h1 class="text-2xl font-bold">Green Magic Resort</h1>
       <nav class="space-x-4 text-sm md:text-base">
@@ -31,7 +42,7 @@
         <a href="contact.html" class="hover:underline">Contact</a>
       </nav>
     </div>
-  </header>
+  </div>
 
   <!-- Hero Carousel using repo images -->
   <div class="swiper swiper-container">
