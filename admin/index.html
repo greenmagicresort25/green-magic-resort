@@ -3,19 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <title>Green Magic CMS</title>
+    <script src="https://unpkg.com/netlify-cms-app@^2.12.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- Required mounting container -->
     <script>
       window.CMS_MANUAL_INIT = true;
-      window.addEventListener('load', () => {
-        const el = document.createElement('div');
-        el.id = 'nc-root';
+
+      window.addEventListener("load", () => {
+        const el = document.createElement("div");
+        el.id = "nc-root";
         document.body.appendChild(el);
-        CMS.init(); // Mount CMS manually
+
+        CMS.init({
+          config: {
+            backend: {
+              name: "github",
+              repo: "greenmagicresort25/green-magic-resort",
+              branch: "main",
+            },
+            media_folder: "images/uploads",
+            public_folder: "/images/uploads",
+            collections: [
+              {
+                name: "homepage",
+                label: "Homepage Content",
+                files: [
+                  {
+                    file: "index.html",
+                    label: "Homepage",
+                    name: "home",
+                    fields: [
+                      {
+                        label: "Welcome Heading",
+                        name: "welcome_heading",
+                        widget: "string",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        });
       });
     </script>
-    <!-- Move the Netlify CMS script here -->
-    <script src="https://unpkg.com/netlify-cms@^2.10.0/dist/netlify-cms.js"></script>
   </body>
 </html>
