@@ -8,4 +8,11 @@ public_folder: "/images/uploads"
 collections:
   - name: "homepage"
     label: "Homepage Content"
-    ...
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "home"
+        fields:
+          - label: "Welcome Heading"
+            name: "welcome_heading"
+            widget: "string"
