@@ -3,48 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <title>Green Magic CMS</title>
-    <script src="https://unpkg.com/netlify-cms-app@^2.12.0/dist/netlify-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms-app@^2.12.0/dist/netlify-cms-app.js"></script>
   </head>
   <body>
+    <div id="nc-root"></div>
     <script>
-      window.CMS_MANUAL_INIT = true;
-
-      window.addEventListener("load", () => {
-        const el = document.createElement("div");
-        el.id = "nc-root";
-        document.body.appendChild(el);
-
-        CMS.init({
-          config: {
-            backend: {
-              name: "github",
-              repo: "greenmagicresort25/green-magic-resort",
-              branch: "main",
-            },
-            media_folder: "images/uploads",
-            public_folder: "/images/uploads",
-            collections: [
-              {
-                name: "homepage",
-                label: "Homepage Content",
-                files: [
-                  {
-                    file: "index.html",
-                    label: "Homepage",
-                    name: "home",
-                    fields: [
-                      {
-                        label: "Welcome Heading",
-                        name: "welcome_heading",
-                        widget: "string",
-                      },
-                    ],
-                  },
-                ],
-              },
-            ],
+      window.CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "greenmagicresort25/green-magic-resort",
+            branch: "main"
           },
-        });
+          media_folder: "images/uploads",
+          public_folder: "/images/uploads",
+          collections: [
+            {
+              name: "homepage",
+              label: "Homepage Content",
+              files: [
+                {
+                  file: "index.html",
+                  label: "Homepage",
+                  name: "home",
+                  fields: [
+                    {
+                      label: "Welcome Heading",
+                      name: "welcome_heading",
+                      widget: "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       });
     </script>
   </body>
