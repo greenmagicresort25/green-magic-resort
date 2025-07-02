@@ -2,8 +2,6 @@ backend:
   name: github
   repo: greenmagicresort25/green-magic-resort
   branch: main
-  base_url: https://greenmagic-resort-project.netlify.app
-  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
