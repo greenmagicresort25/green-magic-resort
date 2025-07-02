@@ -8,35 +8,42 @@
   <body>
     <div id="nc-root"></div>
     <script>
-      window.CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "greenmagicresort25/green-magic-resort",
-            branch: "main"
-          },
-          media_folder: "images/uploads",
-          public_folder: "/images/uploads",
-          collections: [
-            {
-              name: "homepage",
-              label: "Homepage Content",
-              files: [
+      // Wait until CMS is loaded
+      window.addEventListener('load', () => {
+        if (window.CMS) {
+          window.CMS.init({
+            config: {
+              backend: {
+                name: "github",
+                repo: "greenmagicresort25/green-magic-resort",
+                branch: "main"
+              },
+              media_folder: "images/uploads",
+              public_folder: "/images/uploads",
+              collections: [
                 {
-                  file: "index.html",
-                  label: "Homepage",
-                  name: "home",
-                  fields: [
+                  name: "homepage",
+                  label: "Homepage Content",
+                  files: [
                     {
-                      label: "Welcome Heading",
-                      name: "welcome_heading",
-                      widget: "string"
+                      file: "index.html",
+                      label: "Homepage",
+                      name: "home",
+                      fields: [
+                        {
+                          label: "Welcome Heading",
+                          name: "welcome_heading",
+                          widget: "string"
+                        }
+                      ]
                     }
                   ]
                 }
               ]
             }
-          ]
+          });
+        } else {
+          console.error("CMS object not found — Netlify CMS failed to load.");
         }
       });
     </script>
